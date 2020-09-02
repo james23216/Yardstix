@@ -1,0 +1,35 @@
+<!-- <ion-header>
+  <ion-toolbar>
+    <ion-title>questions</ion-title>
+  </ion-toolbar>
+</ion-header> -->
+
+<ion-content [fullscreen]="true">
+
+  <div class="logo-box">
+    <img class="logo" src="assets/icons/Logo.png">
+  </div>
+  <ion-grid>
+    <ion-row class="question-box ">
+      <ion-col size="12">
+        <ion-list *ngFor="let x of questionsList;let i = index"> 
+          <ion-radio-group value="{{x.id}}">
+            <p class="question-text">{{x.question}} </p>
+            <ion-item lines="none" class="item-border-box" color="light">
+              <ion-badge color="light">{{questionValue[i]}}</ion-badge>
+              <ion-range min="1" max="10" step="1" [(ngModel)]="questionValue[i]" color="green">
+                <ion-label slot="start">1</ion-label>
+                <ion-label slot="end">10</ion-label>
+              </ion-range>
+            </ion-item>
+          </ion-radio-group>
+        </ion-list>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col size="12">
+        <ion-button class="" expand="block" color="green" (click)="submitFeedback()">Submit</ion-button>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>
