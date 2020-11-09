@@ -15,6 +15,8 @@ import { HttpClientModule } from '@angular/common/http';
 import { NetworkService } from './services/network.service';
 import { AlertView } from 'src/uicomponents/alert';
 import { ComponentsModule } from './components/components.module';
+import { GoogleAnalytics } from '@ionic-native/google-analytics/ngx';
+
 
 @NgModule({
   declarations: [AppComponent],
@@ -32,6 +34,7 @@ import { ComponentsModule } from './components/components.module';
     SplashScreen,
     NetworkService,
     AlertView,
+    GoogleAnalytics,
     { provide: RouteReuseStrategy, useClass: IonicRouteStrategy }
   ],
   bootstrap: [AppComponent]

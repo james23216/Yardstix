@@ -7,7 +7,7 @@
 
 .text-gray-dark{
 
-    color: #444444
+    color: #444444;
 
 }
 
@@ -545,4 +545,23 @@ p {
     background: url(../../assets/images/overlay-2.png) repeat;
     opacity: 0.2;
 
+}
+
+
+@media screen 
+  and (min-device-width: 1200px) 
+  and (-webkit-min-device-pixel-ratio: 1) { 
+      .section-size {
+          height: 100vh;
+      }
+}
+
+/* ----------- Retina Screens ----------- */
+@media screen 
+  and (min-device-width: 1200px) 
+  and (-webkit-min-device-pixel-ratio: 2)
+  and (min-resolution: 192dpi) { 
+    .section-size {
+        height: 100vh;
+    }
 }

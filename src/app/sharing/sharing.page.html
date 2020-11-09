@@ -11,7 +11,7 @@
     <img class="logo" src="assets/icons/Logo.png">
   </div>
 
-  <div id="container">
+  <div id="container" class="desktop-view text-center">
     <ion-card>
 
       <ion-card-header>
@@ -23,7 +23,7 @@
       </ion-card-content>
       <ion-row>
         <ion-col>
-          <tag-input size="50" [(ngModel)]="emails" secondaryPlaceholder="Enter email to invite" placeholder="Enter email to invite" #useremail="ngModel" (onSelect)="onAdd($event)"></tag-input>
+          <tag-input class="input-width" size="50" [(ngModel)]="emails" secondaryPlaceholder="Enter email to invite" placeholder="Enter email to invite" #useremail="ngModel" (onSelect)="onAdd($event)"></tag-input>
 
           <div *ngIf="useremail.invalid && (useremail.dirty || useremail.touched)" class="alert alert-danger">
             <div *ngIf="useremail.errors.required" class="color">

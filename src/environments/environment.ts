@@ -4,7 +4,7 @@
 
 export const environment = {
   production: false,
-  baseUrl: 'https://yardstixx.herokuapp.com'
+  baseUrl: 'https://yardstixp2p.herokuapp.com'
 };
 
 /*

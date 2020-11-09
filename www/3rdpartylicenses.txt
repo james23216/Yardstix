@@ -47,6 +47,9 @@ MIT
 @ionic-native/core
 MIT
 
+@ionic-native/google-analytics
+MIT
+
 @ionic-native/splash-screen
 MIT
 

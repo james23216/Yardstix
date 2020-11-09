@@ -1,5 +1,7 @@
 {
   "name": "feedback-App",
-  "integrations": {},
+  "integrations": {
+    "cordova": {}
+  },
   "type": "angular"
 }

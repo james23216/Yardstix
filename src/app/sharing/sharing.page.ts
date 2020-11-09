@@ -36,7 +36,7 @@ export class SharingPage implements OnInit {
     }
     const data = {
       email: this.newEmails,
-      base_url: 'https://feedbackapp-84297.web.app/home/'
+      base_url: 'https://yardstix.co.uk/home/'
     };
     console.log(data);
     this.api.feedbackRequest(data).subscribe(res => {

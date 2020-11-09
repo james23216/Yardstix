@@ -52,6 +52,8 @@ export class ResultsPage implements OnInit, AfterViewInit {
   getResults() {
     this.popup.showLoader();
     this.uniqueString = localStorage.getItem('referral');
+    // tslint:disable-next-line:no-unused-expression
+    this.uniqueString  = this.uniqueString ? this.uniqueString : JSON.parse(localStorage.getItem('user')).link;
     this.api.getResultsChart(this.uniqueString).subscribe(res => {
       // console.log(res);
       this.popup.hideLoader();

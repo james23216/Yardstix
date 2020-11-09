@@ -36,3 +36,21 @@
       max-width: 20%;
     }
     }
+
+    @media screen 
+and (min-device-width: 1200px) 
+and (-webkit-min-device-pixel-ratio: 1) { 
+    .desktop-view {
+        max-width: 740px;
+    }
+}
+
+/* ----------- Retina Screens ----------- */
+@media screen 
+and (min-device-width: 1200px) 
+and (-webkit-min-device-pixel-ratio: 2)
+and (min-resolution: 192dpi) { 
+    .desktop-view {
+        max-width: 740px;
+    }
+}
