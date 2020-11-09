@@ -21,6 +21,10 @@ const routes: Routes = [
     loadChildren: () => import('./questions/questions.module').then( m => m.QuestionsPageModule)
   },
   {
+    path: 'create-survey',
+    loadChildren: () => import('./create-survey/create-survey.module').then( m => m.SurveyModule)
+  },
+  {
     path: 'sharing',
     loadChildren: () => import('./sharing/sharing.module').then( m => m.SharingPageModule)
   },

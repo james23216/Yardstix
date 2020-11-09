@@ -58,8 +58,23 @@ export class ApisService {
   }
   send(data) {
     temp = data;
-}
-fetchData() {
-    return temp;
-}
+  }
+  fetchData() {
+      return temp;
+  }
+  getQuestionTemplate(uniqueLink): Observable<any> {
+    return this.http
+    .get(`${environment.baseUrl}/users/dummy_questions?link=${uniqueLink}`, {headers: this.network.getHeaders()})
+    .pipe(catchError((error: any) => {
+        return throwError(error);
+    }));
+  }
+
+  createQuestionTemplate(payload): Observable<any> {
+    return this.http
+    .post(`${environment.baseUrl}/users/questions`, payload, {headers: this.network.getHeaders()})
+    .pipe(catchError((error: any) => {
+        return throwError(error);
+    }));
+  }
 }
