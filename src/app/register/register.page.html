@@ -14,11 +14,11 @@
       <ion-label position="stacked">Enter your name</ion-label>
       <!-- <ion-input></ion-input> -->
       <ion-input type="text" class="textInput" placeholder="Enter Name" required email="true" name="username" [(ngModel)]="name" #username="ngModel"></ion-input>
-      <div *ngIf="username.invalid && (username.dirty || username.touched)" class="alert alert-danger">
-        <div *ngIf="username.errors.required" class="color">
+      <div *ngIf="username.invalid && (username.dirty || username.touched)">
+        <div *ngIf="username.errors.required" class="color alert alert-danger">
           Name is required.
         </div>
-        <div *ngIf="username.errors.minlength" class="color">
+        <div *ngIf="username.errors.minlength" class="color alert alert-danger">
           Name must be at least 4 characters long.
         </div>
       </div>

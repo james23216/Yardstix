@@ -22,13 +22,8 @@ export class RegisterPage implements OnInit {
   ngOnInit() {
   }
   signupUser() {
-    if (
-      this.name &&
-      this.email &&
-      this.password
-    ) {
+    if (this.name && this.email && this.password) {
       this.popup.showLoader();
-
       const data = {
         name: this.name,
         email: this.email,
@@ -37,16 +32,20 @@ export class RegisterPage implements OnInit {
 
       this.api.register(data).subscribe(
         (res: any) => {
-          // console.log(res);
-          this.popup.hideLoader();
-          localStorage.setItem('token', res.access_key);
-          localStorage.setItem('user', JSON.stringify(res.user));
-          localStorage.setItem('isLoggedIn', 'true');
-          this.popup.showToast(res.message, 2000, 'bottom');
-          this.router.navigateByUrl('login');
+          //console.log(res);
+          if(res.message != 'Email already exists'){
+            this.popup.hideLoader();
+            localStorage.setItem('token', res.access_key);
+            localStorage.setItem('user', JSON.stringify(res.user));
+            localStorage.setItem('isLoggedIn', 'true');
+            this.popup.showToast(res.message, 2000, 'bottom');
+            this.router.navigateByUrl('login');
+          }else{
+            this.popup.hideLoader();
+            this.popup.showToast(res.message, 2000, 'bottom');
+          }
         },
         err => {
-          console.log(err);
           this.popup.hideLoader();
           this.errorMessage = err.error;
           console.log(this.errorMessage);

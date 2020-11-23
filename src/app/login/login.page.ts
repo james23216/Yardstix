@@ -30,9 +30,8 @@ export class LoginPage implements OnInit {
       };
       this.api.login(data).subscribe(
         (res: any) => {
-          // console.log(res);
+          console.log(res);
           this.popup.hideLoader();
-
           localStorage.setItem('token', res.access_key);
           localStorage.setItem('user', JSON.stringify(res.user));
           localStorage.setItem('isLoggedIn', 'true');
@@ -40,10 +39,8 @@ export class LoginPage implements OnInit {
           this.router.navigateByUrl('dashboard');
         },
         err => {
-          console.log(err);
           this.popup.hideLoader();
           this.errorMessage = err.error;
-          console.log(this.errorMessage);
           this.errorMessage = this.errorMessage.message;
           this.popup.showToast(this.errorMessage, 2000, 'bottom');
         }
