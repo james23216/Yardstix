@@ -27,6 +27,7 @@ export class ResultsPage implements OnInit, AfterViewInit {
     'Progressive',
     'Leadership'
   ];
+  questions;
   emails = ['saadsufyan19@gmail.com', 'testing@gmail.com'];
   errorMessage;
   public isEmpty = true;
@@ -60,6 +61,7 @@ export class ResultsPage implements OnInit, AfterViewInit {
       if (res.data) {
         this.isEmpty = false;
         this.resultsArray = res.data;
+        this.questions = res.questions;
       }
     }, err => {
       console.log(err);

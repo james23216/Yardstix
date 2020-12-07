@@ -14,7 +14,7 @@
   <div class="suggestion desktop-view"  *ngIf="resultsArray">
     <ion-card class="welcome-card" *ngFor="let x of resultsArray; let i = index">
       <ion-card-header>
-        <ion-card-title>{{headingArray[i]}}</ion-card-title>
+        <ion-card-title>{{questions[i].question}}</ion-card-title>
       </ion-card-header>
       <ion-card-content>
         <app-graphs [value]="x"></app-graphs>

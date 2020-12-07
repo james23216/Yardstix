@@ -38,12 +38,28 @@ export class GraphsComponent implements OnInit, AfterViewInit {
           }]
       },
       options: {
+        responsive: true,
         scales: {
-          yAxes: [{
+          xAxes: [ {
+            display: true,
+            scaleLabel: {
+              display: true,
+              labelString: 'Feedback Score'
+            },
             ticks: {
-              beginAtZero: true
+              major: {
+                fontStyle: 'bold',
+                fontColor: '#FF0000'
+              }
             }
-          }]
+          } ],
+          yAxes: [ {
+            display: true,
+            scaleLabel: {
+              display: true,
+              labelString: 'No. of Responses'
+            }
+          } ]
         }
       }
     });
