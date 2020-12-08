@@ -22,7 +22,7 @@
         Please add the recipients emails below to start your peer feedback request
       </ion-card-content>
       <ion-row>
-        <ion-col>
+        <ion-col data-tip="This is the text of the tooltip2">
           <tag-input class="input-width" size="50" [(ngModel)]="emails" secondaryPlaceholder="Enter email to invite" placeholder="Enter email to invite" #useremail="ngModel" (onSelect)="onAdd($event)"></tag-input>
 
           <div *ngIf="useremail.invalid && (useremail.dirty || useremail.touched)" class="alert alert-danger">

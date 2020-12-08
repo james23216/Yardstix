@@ -28,7 +28,7 @@
           </ion-item> -->
 
 
-          <ion-item-sliding>
+          <ion-item-sliding  #slidingItem>
    
             <ion-item class="item-text-wrap">
               <ion-input placeholder="Please Enter your Question here.." [(ngModel)]="x.question"
@@ -37,12 +37,12 @@
         
             <ion-item-options  side="end">
 
-              <ion-item-option *ngIf="x.disabled" (click)="editQuestion(i)">
+              <ion-item-option *ngIf="x.disabled" (click)="editQuestion(i, slidingItem)">
                 <ion-icon  class="mr-1" name="create-outline"></ion-icon>
                 Edit
               </ion-item-option>
 
-              <ion-item-option *ngIf="x.disabled == false" (click)="doneEdit(i)">
+              <ion-item-option *ngIf="x.disabled == false" (click)="doneEdit(i, slidingItem)">
                 <ion-icon class="mr-1" name="checkmark-done-outline"></ion-icon>
                 Done
               </ion-item-option>
