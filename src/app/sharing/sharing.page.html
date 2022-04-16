@@ -23,7 +23,7 @@
       </ion-card-content>
       <ion-row>
         <ion-col data-tip="This is the text of the tooltip2">
-          <tag-input class="input-width" size="50" [(ngModel)]="emails" secondaryPlaceholder="Enter email to invite" placeholder="Enter email to invite" #useremail="ngModel" (onSelect)="onAdd($event)"></tag-input>
+          <tag-input class="input-width" size="50" [(ngModel)]="emails" secondaryPlaceholder="Enter email to invite" placeholder="Enter email to invite" #useremail="ngModel" (onSelect)="onAdd($event)" title="Press enter to add email"></tag-input>
 
           <div *ngIf="useremail.invalid && (useremail.dirty || useremail.touched)" class="alert alert-danger">
             <div *ngIf="useremail.errors.required" class="color">
